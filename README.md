@@ -24,7 +24,7 @@ $(document).ready(function () {
 
 ### isBreakpoint(breakpoint)
 Check if given breakpoint is in this moment true or false
-* @param {string} breakpoint
+* @param {string} breakpoint 'xs','sm','md','lg' or 'xl'
 * @returns {boolean}
 
 ```js
