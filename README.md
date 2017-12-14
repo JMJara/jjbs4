@@ -15,7 +15,7 @@ Functions:
 ----------
 ### getCurrentBreakpoint()
 Get the current breakpoint,
-@returns {string} 'xs','sm','md','lg' or 'xl'
+* @returns {string} 'xs','sm','md','lg' or 'xl'
 ```js
 $(document).ready(function () {
     console.log( getCurrentBreakpoint() ); // Return the Breakpoint: 'xs','sm','md','lg' or 'xl'
@@ -24,8 +24,8 @@ $(document).ready(function () {
 
 ### isBreakpoint(breakpoint)
 Check if given breakpoint is in this moment true or false
-@param {string} breakpoint
-@returns {boolean}
+* @param {string} breakpoint
+* @returns {boolean}
 
 ```js
 $(document).ready(function () {
