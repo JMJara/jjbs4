@@ -1,4 +1,9 @@
 /**
+ * JJara Boostrap 4 functions
+ * Juan Manuel Jaramillo
+ */
+
+/**
  * contains the all the breakpoints used
  * by Bootstrap 4
  * @type {array}
