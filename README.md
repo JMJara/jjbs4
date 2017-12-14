@@ -1,4 +1,4 @@
-jjbs4 - Jquery Funktionen für Bootstrap 4
+jjbs4 - Jquery Functions for Bootstrap 4
 =========================================
 
 Variables:
