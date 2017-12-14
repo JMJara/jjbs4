@@ -36,3 +36,28 @@ $(document).ready(function () {
     console.log( isBreakpoint('xl') ); // Return boolean
 });
 ```
+
+Events:
+-------
+### resizeEnd
+Call a function after window resize
+```js
+$( window ).on( "resizeEnd" , function() {
+    console.log('resizeEnd');
+});
+```
+
+### breakpointHasChanged
+Call a function  if the Breakpoint has changed
+```js
+$( window ).on( "breakpointHasChanged" , function() {
+    console.log(currentBreakpoint);
+});
+
+// on load and breakpointHasChanged:
+$( window ).on( "load breakpointHasChanged" , function() {
+    console.log(currentBreakpoint);
+});
+```
+
+
