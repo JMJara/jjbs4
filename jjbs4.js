@@ -49,8 +49,16 @@ function isBreakpoint( breakpoint ) {
 }
 
 /**
+ * Set currentBreakpoint an breakpoint HTML Class on init
+ */
+$(function() {
+    currentBreakpoint = getCurrentBreakpoint();
+    $('html').addClass( getCurrentBreakpoint() );
+});
+
+/**
  * Set currentBreakpoint an breakpoint HTML Class
- * on load and resize
+ * on and resize
  */
 $(function() {
     $(window).on('resize', function() {
@@ -89,13 +97,6 @@ $(function() {
         $(window).trigger('breakpointHasChanged');
         lastBreakpoint = getCurrentBreakpoint();
     });
-});
-
-/**
- * Set currentBreakpoint on init
- */
-$(function() {
-    currentBreakpoint = getCurrentBreakpoint();
 });
 
 /**
