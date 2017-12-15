@@ -162,8 +162,8 @@ $(function() {
 
 /**
  * Set IMG src
- * @param $img
- * @param src
+ * @param {object} $img
+ * @param {string} src
  */
 function setImgSrc( $img , src ) {
     var $image = $img;
