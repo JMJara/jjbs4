@@ -76,8 +76,8 @@ $( window ).on( "load breakpointHasChanged" , function() {
 });
 ```
 
-Utilities
----------
+Utilities:
+----------
 
 ### Update of IMG src after Page Load
 ```html
