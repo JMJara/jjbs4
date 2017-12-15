@@ -76,4 +76,16 @@ $( window ).on( "load breakpointHasChanged" , function() {
 });
 ```
 
+Utilities
+---------
+
+### Update of IMG src after Page Load
+```html
+<img src="bild-pre.jpg" data-jjbs4-src="bild-large.jpg" >
+```
+
+### Responsive update of IMG src after Page Load 
+```html
+<img src="bild-pre.jpg" data-jjbs4-src="bild-xs.jpg  xs, bild-sm.jpg  sm, bild-md.jpg  md, bild-lg.jpg  lg, bild-xl.jpg  xl" >
+```
 
