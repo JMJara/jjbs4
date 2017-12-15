@@ -1,6 +1,22 @@
 jjbs4 - Functions for Bootstrap 4 (JQuery)
 ==========================================
 
+Classes:
+--------
+### Breakpoint Class on HTML Tag
+This class change on Window Resize 
+```html
+<html class="xs">
+or
+<html class="sm">
+or
+<html class="md">
+or
+<html class="lg">
+or
+<html class="xl">
+```
+
 Variables:
 ----------
 ### currentBreakpoint
