@@ -112,3 +112,64 @@ function getCurrentBreakpoint() {
     });
     return breakpoint;
 }
+
+/**
+ * IMG src load after Page Ready
+ */
+$(function() {
+    $( window ).on( "load breakpointHasChanged" , function() {
+        $('[data-jjbs4-src]').each(function (  ) {
+            var element = $(this);
+            if( element.is('img') ){
+                var srcTemp = element.attr("data-jjbs4-src").split(",");
+                if(srcTemp.length == 1){
+                    setImgSrc( element , $.trim(srcTemp[0]) );
+                }
+                if(srcTemp.length > 1){
+                    var srcArray = [];
+                    var srcSmal = false;
+                    $.each( srcTemp , function (index, value) {
+                        srcTempData = $.trim(value).split(/\s+/);
+                        if( typeof srcTempData[1] !== 'undefined' ) {
+                            srcArray[srcTempData[1]] = srcTempData[0];
+                        }
+                        else{
+                            srcArray['default'] = srcTempData[0]
+                        }
+                    });
+                    $.each(jjbs4Breakpoints,function (index, value) {
+                        if( typeof srcArray[value] !== 'undefined' && !srcSmal ) {
+                            srcSmal = srcArray[value];
+                        }
+                        if( !srcSmal ) {
+                            srcSmal = srcArray['default'];
+                        }
+                    });
+                    $.each(jjbs4Breakpoints,function (index, value) {
+                        if( typeof srcArray[value] === 'undefined') {
+                            srcArray[value] = srcSmal;
+                        }
+                        else{
+                            srcSmal = srcArray[value];
+                        }
+                    });
+                    setImgSrc( element , srcArray[currentBreakpoint]);
+                }
+            }
+        });
+    });
+});
+
+/**
+ * Set IMG src
+ * @param $img
+ * @param src
+ */
+function setImgSrc( $img , src ) {
+    var $image = $img;
+    var $tempImage = $("<img>");
+    $tempImage.load(function(){
+        $image.attr("src", $(this).attr("src"));
+    });
+    $tempImage.attr("src", src);
+}
