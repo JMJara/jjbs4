@@ -117,12 +117,13 @@ function getCurrentBreakpoint() {
  * IMG src load after Page Ready
  */
 $(function() {
-    $( window ).on( "load breakpointHasChanged" , function() {
+    $( window ).on( "load breakpointHasChanged" , function(event) {
+        console.log(event.type);
         $('[data-jjbs4-src]').each(function (  ) {
             var element = $(this);
             if( element.is('img') ){
                 var srcTemp = element.attr("data-jjbs4-src").split(",");
-                if(srcTemp.length == 1){
+                if(srcTemp.length == 1 && event.type != 'breakpointHasChanged' ){
                     setImgSrc( element , $.trim(srcTemp[0]) );
                 }
                 if(srcTemp.length > 1){
@@ -162,7 +163,7 @@ $(function() {
 
 /**
  * Set IMG src
- * @param {object} $img
+ * @param $img
  * @param {string} src
  */
 function setImgSrc( $img , src ) {
